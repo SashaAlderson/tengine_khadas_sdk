@@ -9,6 +9,11 @@
 git clone https://github.com/SashaAlderson/yolov5
 ```
 2. Обучаем сеть в течение 300 эпох следуя гайдам, либо используем [предобученную](https://drive.google.com/drive/folders/1wlErIkcGLRwXylHBNNuMXS2gnXjkixCY?usp=sharing).
+3. Конвертируем в формат onnx 
+```
+python3 export.py --weights path_to_best.pt \
+--img 416 --include  onnx --opset 11 --simplify
+```
 ## Конвертация на NPU
 1. Клонируем репозиторий с готовыми бинарными файлами для конвертации, конвертировать можно на стороннем устройстве.
 ```
