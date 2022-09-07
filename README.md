@@ -23,7 +23,7 @@ sudo apt install libopencv-dev
 
   Параметры: 
 ```bash
-$ ./convert_tool/convert_tool -h
+$ ./tengine_tools/convert_tool/convert_tool -h
 
 ---- Tengine Convert Tool ---- 
 
@@ -40,7 +40,7 @@ Status      : float32
 	./convert_tool -f caffe -p ./mobilenet.prototxt -m ./mobilenet.caffemodel -o ./mobilenet.tmfile
 ```
 ```bash
-$ ./convert_tool/convert_tool -f onnx -m models/yolov5m_leaky_352.onnx -o models/yolov5m_leaky_352.tmfile
+$ ./tengine_tools/convert_tool/convert_tool -f onnx -m models/yolov5m_leaky_352.onnx -o models/yolov5m_leaky_352.tmfile
 
 ---- Tengine Convert Tool ---- 
 
@@ -54,7 +54,7 @@ Create tengine model file done: models/yolov5m_leaky_352.tmfile
 
   Параметры:
 ```bash
-$ ./quant_tool/quant_tool_uint8 -h
+$ ./tengine_tools/quant_tool/quant_tool_uint8 -h
 [Quant Tools Info]: optional arguments:
 	-h    help            show this help message and exit
 	-m    input model     path to input float32 tmfile
@@ -76,7 +76,7 @@ $ ./quant_tool/quant_tool_uint8 -h
 
 ```
 ```bash
-$ ./quant_tool/quant_tool_uint8 -m models/yolov5m_leaky_352.tmfile -i calibration \
+$ ./tengine_tools/quant_tool/quant_tool_uint8 -m models/yolov5m_leaky_352.tmfile -i calibration \
 -o models/yolov5m_leaky_352_uint8.tmfile -g 3,352,352 -a 0  -w 0,0,0 \
 -s 0.003922,0.003922,0.003922 -c 0 -t 4 -b 1 -y 352,352
 
